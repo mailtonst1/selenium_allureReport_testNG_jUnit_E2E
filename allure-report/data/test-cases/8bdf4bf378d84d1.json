@@ -1,0 +1,109 @@
+{
+  "uid" : "8bdf4bf378d84d1",
+  "name" : "TC0004 - validar login com dados Invalidos dinamicos",
+  "fullName" : "br.com.dbccompany.test.LoginTest.validarLoginDadosInvalidosTest4",
+  "historyId" : "590e61188e412dcfaf9f4bdac43b4859",
+  "time" : {
+    "start" : 1709236046577,
+    "stop" : 1709236047613,
+    "duration" : 1036
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "abrirNavegador",
+    "time" : {
+      "start" : 1709236041749,
+      "stop" : 1709236046573,
+      "duration" : 4824
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : false,
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0
+  } ],
+  "afterStages" : [ {
+    "name" : "fecharNavegador",
+    "time" : {
+      "start" : 1709236047615,
+      "stop" : 1709236047887,
+      "duration" : 272
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "6c411c68bb11f5e",
+      "name" : "Screenshot results",
+      "source" : "6c411c68bb11f5e.png",
+      "type" : "image/png",
+      "size" : 35847
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "hasContent" : true,
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 1
+  } ],
+  "labels" : [ {
+    "name" : "package",
+    "value" : "br.com.dbccompany.test.LoginTest"
+  }, {
+    "name" : "testClass",
+    "value" : "br.com.dbccompany.test.LoginTest"
+  }, {
+    "name" : "testMethod",
+    "value" : "validarLoginDadosInvalidosTest4"
+  }, {
+    "name" : "parentSuite",
+    "value" : "Default Suite"
+  }, {
+    "name" : "suite",
+    "value" : "selenium_allureReport_testNG_jUnit_E2E_2"
+  }, {
+    "name" : "subSuite",
+    "value" : "br.com.dbccompany.test.LoginTest"
+  }, {
+    "name" : "host",
+    "value" : "DBC-001702"
+  }, {
+    "name" : "thread",
+    "value" : "27076@DBC-001702.main(1)"
+  }, {
+    "name" : "framework",
+    "value" : "testng"
+  }, {
+    "name" : "language",
+    "value" : "java"
+  }, {
+    "name" : "story",
+    "value" : "Como usuário do sistema, desejo fazer login na aplicação quando inserir email e senha validos"
+  }, {
+    "name" : "feature",
+    "value" : "Login"
+  }, {
+    "name" : "severity",
+    "value" : "critical"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "critical",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "8bdf4bf378d84d1.json",
+  "parameterValues" : [ ]
+}

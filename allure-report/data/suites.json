@@ -1,0 +1,69 @@
+{
+  "uid" : "98d3104e051c652961429bf95fa0b5d6",
+  "name" : "suites",
+  "children" : [ {
+    "name" : "Default Suite",
+    "children" : [ {
+      "name" : "selenium_allureReport_testNG_jUnit_E2E_2",
+      "children" : [ {
+        "name" : "br.com.dbccompany.test.LoginTest",
+        "children" : [ {
+          "name" : "TC0003 - validar login com dados Invalidos dinamicos",
+          "uid" : "3106dc45c534ffaf",
+          "parentUid" : "5f3168aebc50f90ff8d6b365ee162703",
+          "status" : "passed",
+          "time" : {
+            "start" : 1709236029479,
+            "stop" : 1709236033800,
+            "duration" : 4321
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ ]
+        }, {
+          "name" : "validarLoginDadosInvalidos",
+          "uid" : "a5d5c1385696ce56",
+          "parentUid" : "5f3168aebc50f90ff8d6b365ee162703",
+          "status" : "passed",
+          "time" : {
+            "start" : 1709236037553,
+            "stop" : 1709236041104,
+            "duration" : 3551
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ ]
+        }, {
+          "name" : "TC0004 - validar login com dados Invalidos dinamicos",
+          "uid" : "8bdf4bf378d84d1",
+          "parentUid" : "5f3168aebc50f90ff8d6b365ee162703",
+          "status" : "passed",
+          "time" : {
+            "start" : 1709236046577,
+            "stop" : 1709236047613,
+            "duration" : 1036
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ ]
+        }, {
+          "name" : "TC0001 - validar login com dados Invalidos dinamicos",
+          "uid" : "6cf83dcdbaff03a8",
+          "parentUid" : "5f3168aebc50f90ff8d6b365ee162703",
+          "status" : "passed",
+          "time" : {
+            "start" : 1709236052684,
+            "stop" : 1709236057245,
+            "duration" : 4561
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ ]
+        } ],
+        "uid" : "5f3168aebc50f90ff8d6b365ee162703"
+      } ],
+      "uid" : "16e53800c78249a40d88c8ad6e699dea"
+    } ],
+    "uid" : "8399274b4bb69ec8699907dd6ef7de4e"
+  } ]
+}
