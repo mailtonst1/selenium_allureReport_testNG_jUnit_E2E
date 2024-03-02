@@ -1,8 +1,8 @@
 package br.com.dbccompany.page;
 
 import io.qameta.allure.Step;
-import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.testng.Assert;
 
 public class LoginPage extends BasePage {
 
