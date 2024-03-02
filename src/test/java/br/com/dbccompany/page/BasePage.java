@@ -1,10 +1,7 @@
 package br.com.dbccompany.page;
 
 import br.com.dbccompany.client.selenium.Elements;
-import io.qameta.allure.Attachment;
 import org.openqa.selenium.By;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
 
 public class BasePage extends Elements {
 

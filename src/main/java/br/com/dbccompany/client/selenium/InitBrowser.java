@@ -3,21 +3,11 @@ package br.com.dbccompany.client.selenium;
 import br.com.dbccompany.util.ConfigProperties;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
-import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.AfterTest;
-
-import java.io.IOException;
 import java.time.Duration;
-
 import static br.com.dbccompany.util.DefaultValue.*;
-import static java.lang.Runtime.*;
 
 public class InitBrowser {
 

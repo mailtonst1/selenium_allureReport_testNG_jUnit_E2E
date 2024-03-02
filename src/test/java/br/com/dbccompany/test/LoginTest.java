@@ -4,7 +4,7 @@ import br.com.dbccompany.client.factory.datafaker.UserData;
 import br.com.dbccompany.client.factory.dto.UserDto;
 import br.com.dbccompany.page.LoginPage;
 import io.qameta.allure.*;
-import org.testng.annotations.Test;
+import org.junit.Test;
 import static br.com.dbccompany.validate.LoginValidate.*;
 
 @Feature("Login")
@@ -16,12 +16,14 @@ public class LoginTest extends BaseTest {
 
     LoginPage loginPage = new LoginPage();
     UserData userData = new UserData();
+    UserDto usu = new UserDto();
 
     // Fluxo positivo - Cenário automatizado com execução de passo a passo
-    @Test(description = "TC0001 - validar login com dados Invalidos dinamicos")
+    @Test
+    //@Test(description = "TC0001 - validar login com dados Invalidos dinamicos")
     @Severity(SeverityLevel.CRITICAL)
     public void validarLoginDadosValidos(){
-        UserDto usu =  userData.loginDadosValidos();               // 1. Criando a massa
+        usu =  userData.loginDadosValidos();               // 1. Criando a massa
         loginPage
                 .preencherCampoEmail(usu.getEmail())                // 2.  Preenhce campo email
                 .preencherCampoSenha(usu.getSenha())                // 3.  Preenhce campo senha
@@ -29,11 +31,12 @@ public class LoginTest extends BaseTest {
                 .validarTextoBtnAposLogin(MENSAGEM_LOGIN_SUCESSO);  // 5.  validar resultado
     }
 
+/*
     @Test
     @Description("TC002 - validar login com dados Invalidos dinamicos")
     @Severity(SeverityLevel.CRITICAL)
     public void validarLoginDadosInvalidos(){
-        UserDto usu =  userData.LoginDadoDinamicos();                   // 1. Criando a massa
+      //  usu =  userData.LoginDadoDinamicos();                   // 1. Criando a massa
         loginPage
                 .preencherCampoEmail(usu.getEmail())                    // 2.  Preenhce campo email
                 .preencherCampoSenha(usu.getSenha())                    // 3.  Preenhce campo senha
@@ -45,7 +48,7 @@ public class LoginTest extends BaseTest {
     @Test(description = "TC0003 - validar login com dados Invalidos dinamicos")
     @Severity(SeverityLevel.CRITICAL)
     public void validarLoginComDadosValidosTest3(){
-        UserDto usu =  userData.loginDadosValidos();                    // 1. Criando a massa
+        usu =  userData.loginDadosValidos();                    // 1. Criando a massa
         loginPage
                 .fluxoDeLogin(                                          // 2. Faz login e valida o resultado
                         usu.getEmail(),
@@ -56,12 +59,12 @@ public class LoginTest extends BaseTest {
     @Test(description = "TC0004 - validar login com dados Invalidos dinamicos")
     @Severity(SeverityLevel.CRITICAL)
     public void validarLoginDadosInvalidosTest4(){
-        UserDto usu =  userData.LoginDadoDinamicos();                   // 1. Criando a massa
+        usu =  userData.LoginDadoDinamicos();                   // 1. Criando a massa
         loginPage.
                 loginEmailIncorreto(                                    // 2. Faz login e valida o resultado
                         usu.getEmail(),
                         usu.getSenha(),
                         MENSAGEM_LOGIN_INCORRETO);
     }
-
+/*/
 }

@@ -6,30 +6,22 @@ import org.openqa.selenium.By;
 
 public class LoginPage extends BasePage {
 
-    public LoginPage LoginPage(){
-        return new LoginPage();
-    }
-
     // mapeamento (Padrão)
     private static final By CAMPO_EMAIL =
             By.cssSelector("input[data-qa=\"login-email\"]");
-
     private static final By CAMPO_SENHA =
             By.cssSelector("[data-qa=\"login-password\"]");
-
     private static final By BTN_LOGIN =
             By.cssSelector("#form  div div div.col-sm-4.col-sm-offset-1 div  form > button");
-
     private static final By LABEL_BTN =
             By.cssSelector("#header > div > div > div > div.col-sm-8 > div > ul > li:nth-child(4) > a");
-
     private static final By MSGM_LOGIN_INCORRETO =
             By.cssSelector("#form > div > div > div.col-sm-4.col-sm-offset-1 > div > form > p");
 
 
     // Ações (clicar, escrever etc)
     @Step("Preencher campo email")
-    public LoginPage preencherCampoEmail(String email){
+    public LoginPage  preencherCampoEmail(String email){
         preencherInput(CAMPO_EMAIL,email);
         return this;
     }

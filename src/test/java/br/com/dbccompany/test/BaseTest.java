@@ -1,10 +1,10 @@
 package br.com.dbccompany.test;
 
 import br.com.dbccompany.client.selenium.InitBrowser;
+import org.junit.After;
+import org.junit.Before;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
 import io.qameta.allure.Allure;
 
 import java.io.ByteArrayInputStream;
@@ -20,12 +20,12 @@ public class BaseTest extends InitBrowser {
                         .getScreenshotAs(OutputType.BYTES)));
     }
 
-    @BeforeMethod
+    @Before
     public void abrirNavegador(){
         getBrowser();
     }
 
-    @AfterMethod
+    @After
     public void fecharNavegador() throws IOException {
         attachScreenshot();
         tearDown();
