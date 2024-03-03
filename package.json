@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "imgur": "^2.4.2",
+    "puppeteer": "^22.3.0"
+  },
+  "name": "selenium_allurereport_testng_junit_e2e_2",
+  "version": "1.0.0",
+  "main": "capture.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

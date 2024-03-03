@@ -2,7 +2,7 @@ const puppeteer = require('puppeteer');
 const {ImgurClient} = require('imgur');
 const fs = require('fs');
 const buildNumber = process.argv[2];
-const client = new ImgurClient({ clientId: "91cb4ba1e87bbab" });
+const client = new ImgurClient({ clientId: "1f08a5051f5a4ea" });
 
 async function captureScreenshotAndUpload() {
     const browser = await puppeteer.launch();
