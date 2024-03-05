@@ -106,7 +106,7 @@
                 <executions>
                     <execution>
                         <id>run-capture</id>
-                        <phase>validate</phase>
+                        <phase>verify</phase>
                         <goals>
                             <goal>java</goal>
                         </goals>
