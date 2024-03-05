@@ -46,11 +46,11 @@ public class InitBrowser {
                 driver.get(ConfigProperties.properties.getProperty(BASE_URL));
                 break;
             default:
-//                ChromeOptions options3 = new ChromeOptions();
-//                options3.addArguments("headless");
-//                options3.addArguments("--no-sandbox");
-//                options3.addArguments("--disable-dev-shm-usage");
-                driver = new ChromeDriver();
+                ChromeOptions options3 = new ChromeOptions();
+                options3.addArguments("headless");
+                options3.addArguments("--no-sandbox");
+                options3.addArguments("--disable-dev-shm-usage");
+                driver = new ChromeDriver(options3);
                 driver.manage().window().maximize();
                 driver.manage().deleteAllCookies();
                 wait = new WebDriverWait(driver, Duration.ofSeconds(5));

@@ -11,6 +11,7 @@ import java.time.Duration;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -26,11 +27,11 @@ public class Capture {
 
         switch (ConfigProperties.properties.getProperty(BROWSER)) {
             default:
-//                ChromeOptions options3 = new ChromeOptions();
-//                options3.addArguments("headless");
-//                options3.addArguments("--no-sandbox");
-//                options3.addArguments("--disable-dev-shm-usage");
-                driver = new ChromeDriver();
+                ChromeOptions options3 = new ChromeOptions();
+                options3.addArguments("headless");
+                options3.addArguments("--no-sandbox");
+                options3.addArguments("--disable-dev-shm-usage");
+                driver = new ChromeDriver(options3);
                 driver.manage().window().maximize();
                 driver.manage().deleteAllCookies();
                 wait = new WebDriverWait(driver, Duration.ofSeconds(5));
