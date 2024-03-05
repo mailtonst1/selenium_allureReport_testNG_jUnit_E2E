@@ -77,7 +77,7 @@ public class Capture {
         ConfigProperties.initializePropertyFile();
 
         getBrowser();
-        driver.get("https://tightly-poetic-beagle.ngrok-free.app/login");
+        driver.get(System.getenv("DOMINIO") + "/login");
 
         wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("#root > div > main > div > div > section.mb-4.border.border-gray-300.bg-white.drop-shadow-md > div > footer > button")));
         driver.findElement(By.cssSelector("#root > div > main > div > div > section.mb-4.border.border-gray-300.bg-white.drop-shadow-md > div > footer > button")).click();
