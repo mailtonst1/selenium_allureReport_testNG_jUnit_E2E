@@ -1,15 +1,12 @@
 package br.com.dbccompany;
 import br.com.dbccompany.util.ConfigProperties;
-import org.openqa.selenium.By;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.*;
 
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.time.Duration;
 
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -94,6 +91,10 @@ public class Capture {
 //        driver.findElement(By.cssSelector("form[name=\"login\"] > button[type=\"submit\"]")).click();
 //        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5000));
 //        driver.get(System.getenv("DOMINIO") + "/job/" + System.getenv("JOB_NAME") + "/" + System.getenv("BUILD_NUMBER") + "/allure/");
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15000));
+        Dimension size = new Dimension(1920, 1080); // largura x altura
+        driver.manage().window().setSize(size);
+        driver.navigate().refresh();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15000));
         createScreenshot();
         tearDown();
