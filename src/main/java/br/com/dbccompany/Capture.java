@@ -88,7 +88,7 @@ public class Capture {
         wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("form[name=\"login\"] > button[type=\"submit\"]")));
         driver.findElement(By.cssSelector("form[name=\"login\"] > button[type=\"submit\"]")).click();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5000));
-        driver.get(ConfigProperties.properties.getProperty("DOMINIO") + "/job/" + ConfigProperties.properties.getProperty("JOB_NAME") + "/" + ConfigProperties.properties.getProperty("BUILD_NUMBER") + "/allure/");
+        driver.get(System.getenv("DOMINIO") + "/job/" + System.getenv("JOB_NAME") + "/" + System.getenv("BUILD_NUMBER") + "/allure/");
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5000));
         createScreenshot();
         tearDown();
