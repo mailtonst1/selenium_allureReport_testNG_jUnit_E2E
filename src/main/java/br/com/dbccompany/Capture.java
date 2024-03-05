@@ -29,7 +29,7 @@ public class Capture {
                 driver = new ChromeDriver(options3);
                 driver.manage().window().maximize();
                 driver.manage().deleteAllCookies();
-                wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+                wait = new WebDriverWait(driver, Duration.ofSeconds(5000));
                 break;
         }
     }
@@ -89,11 +89,10 @@ public class Capture {
 //        driver.findElement(By.cssSelector("form[name=\"login\"] > button[type=\"submit\"]")).click();
 //        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5000));
 //        driver.get(System.getenv("DOMINIO") + "/job/" + System.getenv("JOB_NAME") + "/" + System.getenv("BUILD_NUMBER") + "/allure/");
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15000));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5000));
         Dimension size = new Dimension(1920, 1080); // largura x altura
         driver.manage().window().setSize(size);
-        driver.navigate().refresh();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15000));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30000));
         createScreenshot();
         tearDown();
     }
