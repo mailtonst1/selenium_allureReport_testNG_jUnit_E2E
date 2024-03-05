@@ -31,26 +31,32 @@ public class ConfigCapture {
         driver.manage().deleteAllCookies();
         wait = new WebDriverWait(driver, Duration.ofSeconds(5000));
 
+        Dimension size = new Dimension(1920, 1080); // largura x altura
+        driver.manage().window().setSize(size);
+
         get(System.getenv("DOMINIO") + "/job/" + System.getenv("JOB_NAME") + "/" + System.getenv("BUILD_NUMBER") + "/allure/");
 
-        try{ // caso econtre barreira ngrok
+        try{ // caso encontre barreira ngrok
             clicar(By.cssSelector("#root > div > main > div > div > section.mb-4.border.border-gray-300.bg-white.drop-shadow-md > div > footer > button"));
             get(System.getenv("DOMINIO") + "/job/" + System.getenv("JOB_NAME") + "/" + System.getenv("BUILD_NUMBER") + "/allure/");
         } catch (Exception e) {
             System.out.println(e);
         }
-//        wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("#j_username")));
-//        driver.findElement(By.cssSelector("#j_username")).sendKeys("convidado");
-//        wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("#j_password")));
-//        driver.findElement(By.cssSelector("#j_password")).sendKeys("123456");
-//        wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("form[name=\"login\"] > button[type=\"submit\"]")));
-//        driver.findElement(By.cssSelector("form[name=\"login\"] > button[type=\"submit\"]")).click();
-//        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5000));
-//        driver.get(System.getenv("DOMINIO") + "/job/" + System.getenv("JOB_NAME") + "/" + System.getenv("BUILD_NUMBER") + "/allure/");
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5000));
-        Dimension size = new Dimension(1920, 1080); // largura x altura
-        driver.manage().window().setSize(size);
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30000));
+
+        try { // caso encontre a tela de login do jenkins efetua login
+            wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("#j_username")));
+            driver.findElement(By.cssSelector("#j_username")).sendKeys("convidado");
+            wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("#j_password")));
+            driver.findElement(By.cssSelector("#j_password")).sendKeys("123456");
+            wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("form[name=\"login\"] > button[type=\"submit\"]")));
+            driver.findElement(By.cssSelector("form[name=\"login\"] > button[type=\"submit\"]")).click();
+            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5000));
+            driver.get(System.getenv("DOMINIO") + "/job/" + System.getenv("JOB_NAME") + "/" + System.getenv("BUILD_NUMBER") + "/allure/");
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(35000));
     }
 
     public static void tearDown() {
@@ -87,10 +93,6 @@ public class ConfigCapture {
         // Opcionalmente, você pode adicionar uma mensagem de log ou relatório
 //        Reporter.log("Screenshot salva em: " + screenshotFile.getAbsolutePath());
     }
-
-
-
-
 
 
 }
