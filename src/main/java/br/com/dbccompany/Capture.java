@@ -26,8 +26,6 @@ public class Capture {
             default:
                 ChromeOptions options3 = new ChromeOptions();
                 options3.addArguments("headless");
-                options3.addArguments("--no-sandbox");
-                options3.addArguments("--disable-dev-shm-usage");
                 driver = new ChromeDriver(options3);
                 driver.manage().window().maximize();
                 driver.manage().deleteAllCookies();
