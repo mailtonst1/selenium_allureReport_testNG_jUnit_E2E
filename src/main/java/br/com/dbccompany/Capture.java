@@ -77,18 +77,23 @@ public class Capture {
         ConfigProperties.initializePropertyFile();
 
         getBrowser();
-        driver.get(System.getenv("DOMINIO") + "/login");
-
-        wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("#root > div > main > div > div > section.mb-4.border.border-gray-300.bg-white.drop-shadow-md > div > footer > button")));
-        driver.findElement(By.cssSelector("#root > div > main > div > div > section.mb-4.border.border-gray-300.bg-white.drop-shadow-md > div > footer > button")).click();
-        wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("#j_username")));
-        driver.findElement(By.cssSelector("#j_username")).sendKeys("convidado");
-        wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("#j_password")));
-        driver.findElement(By.cssSelector("#j_password")).sendKeys("123456");
-        wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("form[name=\"login\"] > button[type=\"submit\"]")));
-        driver.findElement(By.cssSelector("form[name=\"login\"] > button[type=\"submit\"]")).click();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5000));
         driver.get(System.getenv("DOMINIO") + "/job/" + System.getenv("JOB_NAME") + "/" + System.getenv("BUILD_NUMBER") + "/allure/");
+
+        try{ // caso econtre barreira ngrok
+            wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("#root > div > main > div > div > section.mb-4.border.border-gray-300.bg-white.drop-shadow-md > div > footer > button")));
+            driver.findElement(By.cssSelector("#root > div > main > div > div > section.mb-4.border.border-gray-300.bg-white.drop-shadow-md > div > footer > button")).click();
+            driver.get(System.getenv("DOMINIO") + "/job/" + System.getenv("JOB_NAME") + "/" + System.getenv("BUILD_NUMBER") + "/allure/");
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+//        wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("#j_username")));
+//        driver.findElement(By.cssSelector("#j_username")).sendKeys("convidado");
+//        wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("#j_password")));
+//        driver.findElement(By.cssSelector("#j_password")).sendKeys("123456");
+//        wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("form[name=\"login\"] > button[type=\"submit\"]")));
+//        driver.findElement(By.cssSelector("form[name=\"login\"] > button[type=\"submit\"]")).click();
+//        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5000));
+//        driver.get(System.getenv("DOMINIO") + "/job/" + System.getenv("JOB_NAME") + "/" + System.getenv("BUILD_NUMBER") + "/allure/");
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5000));
         createScreenshot();
         tearDown();
