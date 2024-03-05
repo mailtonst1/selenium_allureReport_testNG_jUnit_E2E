@@ -5,6 +5,7 @@ import br.com.dbccompany.client.factory.dto.UserDto;
 import br.com.dbccompany.page.LoginPage;
 import io.qameta.allure.*;
 import org.junit.Test;
+
 import static br.com.dbccompany.validate.LoginValidate.*;
 
 @Feature("Login")
@@ -30,6 +31,7 @@ public class LoginTest extends BaseTest {
                 .clicarBtnAcessar()                                 // 4.  clicar no botão
                 .validarTextoBtnAposLogin(MENSAGEM_LOGIN_SUCESSO);  // 5.  validar resultado
     }
+
 
 /*
     @Test
